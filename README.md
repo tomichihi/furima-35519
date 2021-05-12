@@ -6,8 +6,10 @@
 | email      | string | null: false |
 | password   | string | null: false |
 | name       | string | null: false |
-| t-name1    | text   | null: false |
-| t-name2    | text   | null: false |
+| 名字        | string | null: false |
+| 名前        | string | null: false |
+|名字（カナ）  | string | null: false|
+|名前（カナ）  | string | null: false|
 | birth      | text   | null: false |
 
 ## items  テーブル
