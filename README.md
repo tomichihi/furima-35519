@@ -34,3 +34,15 @@
 | items         | references | null: false, foreign_key: true |
 
 
+## place  テーブル
+
+| Column       | Type             | Options          |
+| ------       | ------           | -----------      |
+
+| pos_code     | string           | null: false      |
+| prefecture1  | text             | null: false      |
+| prefecture2  | text             | null: false      |
+| building     | text             |                  |
+| phone_num    | string           | null: false      |
+
+
