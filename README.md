@@ -45,4 +45,12 @@
 | building     | text             |                  |
 | phone_num    | string           | null: false      |
 
+## record  テーブル
+| Column        | Type       | 
+| Options         |  
+| ------        | ---------- | ------------------|
+ 
+                  
+| user          | references | null: false, foreign_key: true |
+| items         | references | null: false, foreign_key: true |
 
