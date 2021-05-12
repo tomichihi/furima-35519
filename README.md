@@ -38,7 +38,6 @@
 
 | Column       | Type             | Options          |
 | ------       | ------           | -----------      |
-
 | pos_code     | string           | null: false      |
 | prefecture1  | text             | null: false      |
 | prefecture2  | text             | null: false      |
@@ -48,9 +47,7 @@
 ## record  テーブル
 | Column        | Type       | 
 | Options         |  
-| ------        | ---------- | ------------------|
- 
-                  
+| ------        | ---------- | ------------------|                 
 | user          | references | null: false, foreign_key: true |
 | items         | references | null: false, foreign_key: true |
 
