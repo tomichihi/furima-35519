@@ -1,27 +1,32 @@
 ## users テーブル
 
-| Column     | Type   | Options     |
-| --------   | ------ | ----------- |
+| Column         | Type   | Options     |
+| --------       | ------ | ----------- |
 
-| email      | string | null: false |
-| password   | string | null: false |
-| name       | string | null: false |
-| 名字        | string | null: false |
-| 名前        | string | null: false |
-|名字（カナ）  | string | null: false|
-|名前（カナ）  | string | null: false|
-| birth      | text   | null: false |
+| email          | string | null: false |
+| password       | string | null: false |
+| name           | string | null: false |
+| last_name      | string | null: false |
+| first_name     | string | null: false |
+| last_name_kana | string | null: false |
+| first_name_kana| string | null: false |
+| birth          | date   | null: false |
 
 ## items  テーブル
 
-| Column       | Type             | Options          |
-| ------       | ------           | -----------      |
+| Column       | Type             | Options     |
+| ------       | ------           | ----------- |
 
-| title        | string           | null: false      |
-| price        | text             | null: false      |
-| catch_copy   | text             | null: false      |
-| category     | text             | null: false      |
-| user         | references       |                  |
+| title        | string           | null: false |
+| price        | integer          | null: false |
+| catch_copy   | text             | null: false |
+| category     | text             | null: false |
+| condition    | text             |             |
+| fee          | text             |             |
+| area         | text             |             |
+| days         | text             |             |
+| user         | references       | null: false, foreign_key: true|
+
 
 
 ## comments  テーブル
@@ -36,20 +41,21 @@
 | items         | references | null: false, foreign_key: true |
 
 
-## place  テーブル
+## places  テーブル
 
 | Column       | Type             | Options          |
 | ------       | ------           | -----------      |
 | pos_code     | string           | null: false      |
-| prefecture1  | text             | null: false      |
-| prefecture2  | text             | null: false      |
-| building     | text             |                  |
+| prefecture   | string           | null: false      |
+| city         | text             | null: false      |
+| address      | text             | null: false      |
+| building     | string           |                  |
 | phone_num    | string           | null: false      |
 
-## record  テーブル
-| Column        | Type       | 
+## records  テーブル
+| Column        | Type       |
 | Options         |  
-| ------        | ---------- | ------------------|                 
+| ------        | ---------- |      ------------------|                 
 | user          | references | null: false, foreign_key: true |
 | items         | references | null: false, foreign_key: true |
 
