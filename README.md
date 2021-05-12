@@ -29,7 +29,7 @@
 | ------        | ---------- | ------------------|
 
 | text          | text       | null: false 
-                  |
+                  
 | user          | references | null: false, foreign_key: true |
 | items         | references | null: false, foreign_key: true |
 
