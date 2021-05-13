@@ -32,8 +32,7 @@ has_many :item
 | days_id      | integer     | null: false |
 | user         | references  | null: false |
 
-has_many :records
-belongs_to :place
+has_one :records
 belongs_to :user
 
 
@@ -42,14 +41,14 @@ belongs_to :user
 | Column       | Type      | Options          |
 | ------       | ------    | -----------      |
 | pos_code     | string    | null: false      |
-| prefecture   | string    | null: false      |
+| prefecture   | integer   | null: false      |
 | city         | string    | null: false      |
 | address      | string    | null: false      |
 | building     | string    |                  |
 | phone_num    | string    | null: false      |
 | record       | references| null: false, foreign_key: true|
 
-belongs_to :item
+belongs_to :record
 
 
 ## records  テーブル
@@ -57,7 +56,8 @@ belongs_to :item
 | Options         |  
 | ------        | ---------- |      ------------------|                 
 | user          | references | null: false, foreign_key: true |
-| items         | references | null: false|
+| item          | references | null: false, foreign_key: true |
 
 belongs_to :item
 belongs_to :user
+belongs_to :place
