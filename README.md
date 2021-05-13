@@ -32,7 +32,7 @@ has_many :items
 | days_id      | integer     | null: false |
 | user         | references  | null: false |
 
-has_one :record
+belongs_to :record
 belongs_to :user
 
 
@@ -41,7 +41,7 @@ belongs_to :user
 | Column       | Type      | Options          |
 | ------       | ------    | -----------      |
 | pos_code     | string    | null: false      |
-| prefecture   | integer   | null: false      |
+| area_id      | integer   | null: false      |
 | city         | string    | null: false      |
 | address      | string    | null: false      |
 | building     | string    |                  |
@@ -60,4 +60,4 @@ has_one :record
 
 belongs_to :item
 belongs_to :user
-belongs_to :place
+has_one    :place
