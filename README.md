@@ -12,8 +12,8 @@
 | first_name_kana   | string | null: false |
 | birth             | date   | null: false |
 
-has_many :record
-has_many :item
+has_many :records
+has_many :items
 
 
 
@@ -32,7 +32,7 @@ has_many :item
 | days_id      | integer     | null: false |
 | user         | references  | null: false |
 
-has_one :records
+has_one :record
 belongs_to :user
 
 
@@ -48,7 +48,7 @@ belongs_to :user
 | phone_num    | string    | null: false      |
 | record       | references| null: false, foreign_key: true|
 
-belongs_to :record
+has_one :record
 
 
 ## records  テーブル
