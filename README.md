@@ -32,7 +32,7 @@ has_many :items
 | days_id      | integer     | null: false |
 | user         | references  | null: false |
 
-belongs_to :record
+has_one :record
 belongs_to :user
 
 
@@ -48,7 +48,7 @@ belongs_to :user
 | phone_num    | string    | null: false      |
 | record       | references| null: false, foreign_key: true|
 
-has_one :record
+belongs_to :record
 
 
 ## records  テーブル
