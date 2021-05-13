@@ -26,11 +26,11 @@ has_many :item
 | price        | integer     | null: false |
 | catch_copy   | text        | null: false |
 | category_id  | integer     | null: false |
-| condition_id | integer     | null: false, foreign_key: true|
-| fee_id       | integer     | null: false, foreign_key: true|
-| area_id      | integer     | null: false, foreign_key: true|
-| days_id      | integer     | null: false, foreign_key: true|
-| user         | references  | null: false, foreign_key: true|
+| condition_id | integer     | null: false |
+| fee_id       | integer     | null: false |
+| area_id      | integer     | null: false |
+| days_id      | integer     | null: false |
+| user         | references  | null: false |
 
 has_many :records
 belongs_to :place
@@ -57,7 +57,7 @@ belongs_to :item
 | Options         |  
 | ------        | ---------- |      ------------------|                 
 | user          | references | null: false, foreign_key: true |
-| items         | references | null: false, foreign_key: true |
+| items         | references | null: false|
 
 belongs_to :item
 belongs_to :user
