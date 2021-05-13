@@ -26,10 +26,10 @@ has_many :item
 | price        | integer     | null: false |
 | catch_copy   | text        | null: false |
 | category_id  | integer     | null: false |
-| condition_id | integer     |             |
-| fee_id       | integer     |             |
-| area_id      | integer     |             |
-| days_id      | integer     |             |
+| condition_id | integer     | null: false, foreign_key: true|
+| fee_id       | integer     | null: false, foreign_key: true|
+| area_id      | integer     | null: false, foreign_key: true|
+| days_id      | integer     | null: false, foreign_key: true|
 | user         | references  | null: false, foreign_key: true|
 
 has_many :records
