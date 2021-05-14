@@ -3,13 +3,15 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-         validates :name,                 presence: true, length: { maximum: 8 }
-         validates :password,             presence: true
-         validates :password_confirmation,presence: true
-         validates :encrypted_password, :password,:password_confirmation,length:{minimum:6},format:{with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{6,}/}  
-         validates :last_name,            presence: true
-         validates :first_name,           presence: true
-         validates :last_name_kana,       presence: true
-         validates :first_name_kana,      presence: true
-         validates :birth,                presence: true   
+    with_options presence: true do
+         validates :name, length: { maximum: 8 }
+         validates :password
+         validates :password_confirmation
+         validates :last_name,format:{with: /\A[ぁ-んァ-ン一-龥]/}
+         validates :first_name,format:{with: /\A[ぁ-んァ-ン一-龥]/}
+         validates :last_name_kana,format:{with: /\A[ァ-ヶー－]+\z/}
+         validates :first_name_kana,format:{with: /\A[ァ-ヶー－]+\z/}
+         validates :birth
+    end 
+         validates :password,:password_confirmation,length:{minimum:6},format:{with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{6,}/}   
 end
