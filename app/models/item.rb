@@ -1,12 +1,13 @@
 class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :area
-  belongs_to :category
-  belongs_to :condition
-  belongs_to :days
-  belongs_to :fee
-  has_one :record
-  belongs_to :user
+  belongs_to       :area
+  belongs_to       :category
+  belongs_to       :condition
+  belongs_to       :days
+  belongs_to       :fee
+  belongs_to       :user
+  has_one          :record
+  has_one_attached :image
 
   with_options numericality: { other_than: 0 } do
   validates :area_id
