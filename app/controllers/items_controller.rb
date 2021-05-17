@@ -2,7 +2,6 @@ class ItemsController < ApplicationController
 
   def  index
   @items = Item.all 
-
   end
 
   def new
@@ -17,9 +16,8 @@ class ItemsController < ApplicationController
    else
     render :new
    end
-  end
 
-  
+  end
 
   private
   def item_params
