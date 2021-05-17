@@ -3,6 +3,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+         has_many :records
+         has_many :items       
          namae = /\A[ぁ-んァ-ン一-龥々ー]+\z/
          kana = /\A[ァ-ヶー－]+\z/
 

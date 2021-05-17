@@ -21,7 +21,7 @@ has_many :items
 
 | Column       | Type        | Options     |
 | ------       | ------      | ----------- |
-
+                                            
 | title        | string      | null: false |
 | price        | integer     | null: false |
 | catch_copy   | text        | null: false |
