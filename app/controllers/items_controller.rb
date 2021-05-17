@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, only: [:edit,:destroy,:new]
-  
+  before_action :authenticate_user!, only: [:edit,:destroy,:new,:create]
+
   def  index
   #@items = Item.all 
   end
