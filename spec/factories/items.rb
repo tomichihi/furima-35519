@@ -1,8 +1,7 @@
 FactoryBot.define do
   factory :item do
   nihongo = Gimei.name
-
-  image        {Faker::Lorem.sentence}
+  
   title        {nihongo}                                
   price        {Faker::Number.within(range: 300..9999999)}           
   catch_copy   {nihongo}                                            
