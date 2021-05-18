@@ -10,7 +10,7 @@ class Area < ActiveHash::Base
     { id: 7, name: '福島県' },
     { id: 8, name: '茨城県' },
     { id: 9, name: '栃木県' },
-    { id: 10, name: '群馬県'},
+    { id: 10, name: '群馬県' },
     { id: 11, name: '埼玉県' },
     { id: 12, name: '千葉県' },
     { id: 13, name: '東京都' },
@@ -51,4 +51,4 @@ class Area < ActiveHash::Base
   ]
   include ActiveHash::Associations
   has_many :items
-  end
+end
