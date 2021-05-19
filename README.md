@@ -40,6 +40,7 @@ belongs_to :user
 
 | Column       | Type      | Options          |
 | ------       | ------    | -----------      |
+
 | pos_code     | string    | null: false      |
 | area_id      | integer   | null: false      |
 | city         | string    | null: false      |
