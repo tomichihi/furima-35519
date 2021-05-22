@@ -64,6 +64,12 @@ RSpec.describe RecordPlace, type: :model do
           @record_place.valid?
           expect(@record_place.errors.full_messages).to include("Phone num is too long (maximum is 11 characters)")
         end
+
+        it 'トークンが空だと購入できない' do
+          @record_place.token = ''
+          @record_place.valid?
+          expect(@record_place.errors.full_messages).to include("Token can't be blank")
+        end
         
         it '電話番号にハイフンが使用されている場合では登録できないこと' do
           @record_place.phone_num = '123' + '-' + '4567890'

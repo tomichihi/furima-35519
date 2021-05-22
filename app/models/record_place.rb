@@ -1,6 +1,6 @@
 class RecordPlace
   include ActiveModel::Model
-  attr_accessor :pos_code, :area_id, :city, :address, :building, :phone_num, :token, :user_id, :item_id, :record_id
+  attr_accessor :pos_code, :area_id, :city, :address, :building, :phone_num, :token, :user_id, :item_id
 
   with_options presence: true do
     validates :pos_code, format: {with: /\A[0-9]{3}-[0-9]{4}\z/, message: "is invalid. Include hyphen(-)"}
@@ -8,6 +8,7 @@ class RecordPlace
     validates :city
     validates :address
     validates :phone_num,length: { maximum: 11 },format:{with: /\A[0-9]+\z/}
+    validates :token
     validates :user_id
     validates :item_id
   end

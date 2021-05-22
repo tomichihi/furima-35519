@@ -5,6 +5,8 @@ FactoryBot.define do
   area_id     {Faker::Number.within(range: 1..47) }                    
   city        {add}                 
   address     {add}           
-  phone_num   {'1112223333'}   
+  phone_num   {'1112223333'}
+  token       {Faker::Alphanumeric.alphanumeric(number: 15, min_alpha: 3)}
+  building    {add}
   end                
 end                   

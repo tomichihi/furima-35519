@@ -1,11 +1,10 @@
 class RecordsController < ApplicationController
-  before_action :authenticate_user!, only: :index
+  before_action :authenticate_user!, only: [:index, :create]
   before_action :set_item, only: [:index,:create]
-  before_action :validation, only: [:index]
+  before_action :validation, only: [:index, :create]
                                                     
   def index                                  
-    @record_place = RecordPlace.new             
-                          
+    @record_place = RecordPlace.new                                     
   end                           
                       
   def create              
@@ -42,12 +41,6 @@ class RecordsController < ApplicationController
     if @item.user_id == current_user.id || @item.record != nil
     redirect_to root_path
     end
-  end
-  
-  
-  
-   
-  
-  
+  end 
 end
   
