@@ -36,33 +36,9 @@ RSpec.describe RecordPlace, type: :model do
         end
 
         it 'area_idを選択していないと保存できないこと' do
-          @record_place.area_id = '0'
+          @record_place.area_id = 0
           @record_place.valid?
           expect(@record_place.errors.full_messages).to include("Area can't be blank")
-        end
-
-        it 'priceが空だと保存できないこと' do
-          @record_place.price = ''
-          @record_place.valid?
-          expect(@record_place.errors.full_messages).to include("Price can't be blank", "Price is not a number")
-        end
-
-        it 'priceが全角数字だと保存できないこと' do
-          @record_place.price = '３００'
-          @record_place.valid?
-          expect(@record_place.errors.full_messages).to include("Price is not a number")
-        end
-
-        it 'priceが300円未満では保存できないこと' do
-          @record_place.price = '299'
-          @record_place.valid?
-          expect(@record_place.errors.full_messages).to include("Price must be greater than or equal to 300")
-        end
-
-        it 'priceが10000000円以上では保存できないこと' do
-          @record_place.price = '10000000'
-          @record_place.valid?
-          expect(@record_place.errors.full_messages).to include("Price must be less than or equal to 9999999")       
         end
 
         it 'cityがないと保存できない' do
@@ -89,6 +65,18 @@ RSpec.describe RecordPlace, type: :model do
           expect(@record_place.errors.full_messages).to include("Phone num is too long (maximum is 11 characters)")
         end
         
+        it '電話番号にハイフンが使用されている場合では登録できないこと' do
+          @record_place.phone_num = '123' + '-' + '4567890'
+          @record_place.valid?
+          expect(@record_place.errors.full_messages).to include("Phone num is invalid")
+        end
+
+        it '電話番号が英数混合では登録できないこと' do
+          @record_place.phone_num = '123abc45678'             
+          @record_place.valid?                            
+          expect(@record_place.errors.full_messages).to include("Phone num is invalid")
+        end
+
         it 'userが紐付いていないと保存できないこと' do
           @record_place.user_id = nil
           @record_place.valid?

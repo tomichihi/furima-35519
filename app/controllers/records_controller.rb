@@ -2,10 +2,10 @@ class RecordsController < ApplicationController
   before_action :authenticate_user!, only: :index
   before_action :set_item, only: [:index,:create]
   before_action :validation, only: [:index]
-                                                   
+                                                    
   def index                                  
     @record_place = RecordPlace.new             
-    render 'records/index'                      
+                          
   end                           
                       
   def create              
