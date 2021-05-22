@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_item, only: [:show, :edit, :update, :destroy]
-  before_action :user_validation, only: [:edit, :update ,:destroy]
+  before_action :user_validation, only: [:edit, :update, :destroy]
 
   def index
     @items = Item.all.order('created_at DESC')
@@ -48,13 +48,12 @@ class ItemsController < ApplicationController
   end
   
   def user_validation
-   unless current_user.id == @item.user_id
+   unless current_user.id == @item.user_id || @item.record = nil
     redirect_to action: :index
    end 
   end
   
   def item_params
-    params.require(:item).permit(:title, :price, :catch_copy, :category_id, :condition_id, :fee_id, :area_id, :days_id,
-                                 :image).merge(user_id: current_user.id)
+    params.require(:item).permit(:title, :price, :catch_copy, :category_id, :condition_id, :fee_id, :area_id, :days_id, :image).merge(user_id: current_user.id)
   end
 end

@@ -1,0 +1,2 @@
+module RecordPlacesHelper
+end
