@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_19_002051) do
+ActiveRecord::Schema.define(version: 2021_05_20_073620) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -58,16 +58,15 @@ ActiveRecord::Schema.define(version: 2021_05_19_002051) do
     t.integer "area_id", null: false
     t.string "city", null: false
     t.string "address", null: false
-    t.string "buliding"
+    t.string "building"
     t.string "phone_num", null: false
-    t.bigint "user_id", null: false
+    t.bigint "record_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_places_on_user_id"
+    t.index ["record_id"], name: "index_places_on_record_id"
   end
 
   create_table "records", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "price", null: false
     t.bigint "user_id", null: false
     t.bigint "item_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -95,7 +94,7 @@ ActiveRecord::Schema.define(version: 2021_05_19_002051) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "places", "users"
+  add_foreign_key "places", "records"
   add_foreign_key "records", "items"
   add_foreign_key "records", "users"
 end
