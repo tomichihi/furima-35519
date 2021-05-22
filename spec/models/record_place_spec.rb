@@ -26,7 +26,7 @@ RSpec.describe RecordPlace, type: :model do
         it 'pos_codeが空だと保存できないこと' do
           @record_place.pos_code = ''
           @record_place.valid?
-          expect(@record_place.errors.full_messages).to include("Pos code can't be blank", "Pos code is invalid. Include hyphen(-)")
+          expect(@record_place.errors.full_messages).to include("Pos code can't be blank")
         end
 
         it 'pos_codeが半角のハイフンを含んだ正しい形式でないと保存できないこと' do
@@ -56,7 +56,7 @@ RSpec.describe RecordPlace, type: :model do
         it 'phone_numがないと保存できない' do
           @record_place.phone_num = ''
           @record_place.valid?
-          expect(@record_place.errors.full_messages).to include("Phone num can't be blank", "Phone num is invalid")
+          expect(@record_place.errors.full_messages).to include("Phone num can't be blank")
         end
 
         it 'phone_numが12桁以上は保存できない' do
