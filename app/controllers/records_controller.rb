@@ -2,6 +2,7 @@ class RecordsController < ApplicationController
   before_action :authenticate_user!, only: :index
   before_action :set_item, only: [:index,:create]
   before_action :validation, only: [:index]
+  
   def index
     @record_place = RecordPlace.new
     render 'records/index'
@@ -29,7 +30,7 @@ class RecordsController < ApplicationController
   end
 
   def pay_item
-    Payjp.api_key = "sk_test_dc5b6a39fd7895cefd9e1bb4"  
+    Payjp.api_key = ENV["PAYJP_SECRET_KEY"] 
     Payjp::Charge.create(
       amount: place_params[:price],  # 商品の値段
       card: place_params[:token],    # カードトークン
