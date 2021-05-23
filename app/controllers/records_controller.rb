@@ -25,13 +25,13 @@ class RecordsController < ApplicationController
   end
   
   def place_params
-    params.require(:record_place).permit(:pos_code, :area_id, :city, :address, :building, :phone_num).merge(token: params[:token],price: @item.price, item_id: @item.id, user_id:current_user.id)
+    params.require(:record_place).permit(:pos_code, :area_id, :city, :address, :building, :phone_num).merge(token: params[:token],item_id: @item.id, user_id:current_user.id)
   end
   
   def pay_item
     Payjp.api_key = ENV["PAYJP_SECRET_KEY"] 
-    Payjp::Charge.create(
-      amount: place_params[:price],  # 商品の値段
+    Payjp::Charge.create(                        
+      amount: @item.price,  # 商品の値段
       card: place_params[:token],    # カードトークン
       currency: 'jpy'                 # 通貨の種類（日本円）
     )
@@ -42,5 +42,6 @@ class RecordsController < ApplicationController
     redirect_to root_path
     end
   end 
+
 end
   
