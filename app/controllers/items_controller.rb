@@ -48,8 +48,8 @@ class ItemsController < ApplicationController
   end
   
   def user_validation
-   unless current_user.id == @item.user_id || @item.record = nil
-    redirect_to action: :index
+   if @item.record != nil
+    redirect_to root_path
    end 
   end
   
