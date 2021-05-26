@@ -14,8 +14,19 @@
 
 has_many :records
 has_many :items
+has_one  :profile
 
+## profiles テーブル
 
+| Column    | Type       | Options    |
+| --------  | ------     | -----------|
+
+| name      | string     | null: false|
+| hobby     | string     |  |  
+| birth     | string     |  |
+| comment   | text       |  | 
+| user      | references | null: false, foreign_key: true |
+belongs_to :user
 
 ## items  テーブル
 

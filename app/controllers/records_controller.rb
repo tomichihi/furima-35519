@@ -9,7 +9,7 @@ class RecordsController < ApplicationController
                       
   def create              
     @record_place = RecordPlace.new(place_params)
-
+  
     if @record_place.valid?
       pay_item
       @record_place.save

@@ -1,0 +1,60 @@
+<div class="items-sell-contents">
+  <header class="items-sell-header">
+    <%= link_to image_tag('furima-logo-color.png' , size: '185x50'), "/" %>
+</header>
+
+<div class='form-wrap'>
+  <div class='form-header'>
+    <h1 class='prof-form-header-text'>
+      プロフィール
+    </h1>
+  </div>
+
+  <div class="prof-form-group">
+    <div class='prof-form-text-wrap'>
+    <div class='profile-pare'>
+     <div class = 'profile'> ユーザー</div> 
+      <label class="prof-form-text"><%= @user.name%></label>
+    </div>
+   </div>
+  </div>
+  
+  <div class="prof-form-group">
+    <div class='prof-form-text-wrap'>
+      <div class='profile-pare'>
+         <div class = 'profile'> 趣味</div>
+      <label class="prof-form-text"><%= @user.prof.hobby%></label>
+    </div>
+  </div>
+  </div>
+  
+  <div class="prof-form-group">
+    <div class='prof-form-text-wrap'>
+     <div class='profile-pare'>
+       <div class = 'profile'>一言コメント</div> 
+      <label class="prof-form-text"><%= @user.prof.comment%></label>
+    </div>
+   </div>
+  </div>
+  <div class = 'edit-parent'>
+  <%if current_user.id == @user.id %>
+   <div><%= link_to '編集する', edit_prof_path(@user.id), class: 'edit-text' %></div>
+   <%else%>
+   <div><%= link_to '戻る', :back, class: 'edit-text' %></div>
+  <%end%>
+  </div>
+</div>
+
+
+  <footer class="items-sell-footer">
+    <ul class="menu">
+      <li><a href="#">プライバシーポリシー</a></li>
+      <li><a href="#">フリマ利用規約</a></li>
+      <li><a href="#">特定商取引に関する表記</a></li>
+    </ul>
+    <%= link_to image_tag('furima-logo-color.png' , size: '185x50'), "/" %>
+    <p class="inc">
+      ©︎Furima,Inc.
+    </p>
+  </footer>
+</div>

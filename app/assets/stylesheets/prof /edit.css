@@ -1,4 +1,4 @@
-.profile-main {
+.registration-main {
   width: 100%;
   min-width: 800px;
   height: 100%;
@@ -21,13 +21,13 @@
   font-size: 22px;
 }
 
-.form-header-text {
+.prof-form-header-text {
   line-height: 100px;
-  border-bottom: 1px solid #f5f5f5;
+  border-bottom: 1px solid lightblue;
   font-weight: bold;
 }
 
-.form-group {
+.prof-form-group {
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -35,14 +35,17 @@
   padding-top: 20px;
 }
 
+.form-group:first-child {
+  padding: 0;
+}
 
-.form-text-wrap {
+.prof-form-text-wrap {
   width: 100%;
   height: 20%;
 }
 
-.form-text {
-  font-size: 14px;
+.prof-form-text {
+  font-size: 30px;
   font-weight: bold;
 }
 
@@ -149,4 +152,22 @@
   cursor: pointer;
 }
 
+.register-info {
+  margin: 30px 180px 0 0;
+  color: #0099e8;
+  text-align: right;
+  cursor: pointer;
+}
 
+.comment-form {
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  height: 60px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 16px;
+  resize: none;
+}

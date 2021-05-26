@@ -91,6 +91,12 @@
   color: #333333;
 }
 
+.profile-link{
+  text-decoration: none;
+  color: #333333;
+  margin-left: 3vw;
+}
+
 .login {
   text-decoration: none;
   line-height: 32px;

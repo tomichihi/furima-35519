@@ -1,4 +1,4 @@
-.profile-main {
+.registration-main {
   width: 100%;
   min-width: 800px;
   height: 100%;
@@ -35,6 +35,9 @@
   padding-top: 20px;
 }
 
+.form-group:first-child {
+  padding: 0;
+}
 
 .form-text-wrap {
   width: 100%;
@@ -44,6 +47,10 @@
 .form-text {
   font-size: 14px;
   font-weight: bold;
+}
+
+.user-name-text{
+  font-size: 20px;
 }
 
 .input-default {
@@ -149,4 +156,22 @@
   cursor: pointer;
 }
 
+.register-info {
+  margin: 30px 180px 0 0;
+  color: #0099e8;
+  text-align: right;
+  cursor: pointer;
+}
 
+.comment-form {
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  height: 60px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 16px;
+  resize: none;
+}

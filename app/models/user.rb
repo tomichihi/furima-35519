@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :records
   has_many :items
+  has_one  :prof
   namae = /\A[ぁ-んァ-ン一-龥々ー]+\z/
   kana = /\A[ァ-ヶー－]+\z/
 
@@ -17,6 +18,7 @@ class User < ApplicationRecord
     validates :last_name_kana, format: { with: kana }
     validates :first_name_kana, format: { with: kana }
     validates :birth
+    
   end
   validates :password, :password_confirmation, length: { minimum: 6 }, format: { with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{6,}/ }
 end
