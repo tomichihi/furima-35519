@@ -16,7 +16,7 @@ has_many :records
 has_many :items
 has_one  :profile
 
-## profiles テーブル
+## profs テーブル
 
 | Column    | Type       | Options    |
 | --------  | ------     | -----------|
